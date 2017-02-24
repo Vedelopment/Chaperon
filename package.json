@@ -1,0 +1,25 @@
+{
+  "name": "chaperon",
+  "version": "1.0.0",
+  "description": "An app that you can use to help your friends and family monitor your safety during certain activies or windows of time. Inculudes a panic button you can activate at any time and gps tracking to help locate you.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vedelopment/Chaperon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vedelopment/Chaperon/issues"
+  },
+  "homepage": "https://github.com/Vedelopment/Chaperon#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.4"
+  }
+}

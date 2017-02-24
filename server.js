@@ -26,7 +26,7 @@ app.get('/', function homepage (req, res) {
 
 // route to special page of meow
 app.get('/meow', function homepage (req, res) {
-  res.sendFile(__dirname + '/views/meow.html');
+  res.sendFile(__dirname + '/views/templates/meow.html');
 });
 
 // use all other routes to find angular templates

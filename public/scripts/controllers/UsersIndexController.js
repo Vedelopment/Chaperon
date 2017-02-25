@@ -6,10 +6,11 @@ UsersIndexController.$inject = ['$http'];
 
 function UsersIndexController ($http) {
   var vm = this;
+  vm.hello = "hello";
   vm.newUser = {};
   vm.newUser = {
-    name: 'Viva Hate',
-    artistName: 'Morrissey'
+    first_name: 'Ivana',
+    last_name: 'Test'
   };
 
   $http({

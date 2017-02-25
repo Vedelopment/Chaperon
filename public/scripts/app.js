@@ -2,28 +2,29 @@ angular
   .module('chaperon', ['ngRoute'])
   .config(config);
 
-config.$inject = ['$routeProvider', '$locationProvider'];
 
-function config ($routeProvider, $locationProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: '/templates/users',
-      controllerAs: 'usersIndexCtrl',
-      controller: 'UsersIndexController'
-    })
-    .when('/users', {
-      templateUrl: '/templates/users',
-      controllerAs: 'usersIndexCtrl',
-      controller: 'UsersIndexController'
-    })
-    .when('/users/:id', {
-      templateUrl: '/templates/users-show',
-      controllerAs: 'usersShowCtrl',
-      controller: 'UsersShowController'
-    })
+  config.$inject = ['$routeProvider', '$locationProvider'];
 
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-  });
-}
+  function config ($routeProvider, $locationProvider) {
+    $routeProvider
+      // .when('/', {
+      //   templateUrl: '/templates/users',
+      //   controllerAs: 'usersIndexCtrl',
+      //   controller: 'UsersIndexController'
+      // })
+      .when('/users', {
+        templateUrl: '/templates/users',
+        controllerAs: 'usersIndexCtrl',
+        controller: 'UsersIndexController'
+      })
+      .when('/users/:id', {
+        templateUrl: '/templates/users-show',
+        controllerAs: 'usersShowCtrl',
+        controller: 'UsersShowController'
+      })
+
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+  }

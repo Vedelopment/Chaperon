@@ -8,7 +8,7 @@ function UsersIndexController ($http) {
   var vm = this;
   vm.hello = "hello";
   vm.newUser = {};
-  vm.newUser = {
+  vm.user = {
     first_name: 'Ivana',
     last_name: 'Test'
   };

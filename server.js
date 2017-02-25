@@ -43,6 +43,12 @@ app.post('/api/users', controllers.users.create);
 app.delete('/api/users/:userId', controllers.users.destroy);
 app.put('/api/users/:userId', controllers.users.update);
 
+// ALL OTHER ROUTES (ANGULAR HANDLES)
+// redirect all other paths to index
+app.get('*', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
 ////////////////////
 //    SERVER      //
 ////////////////////

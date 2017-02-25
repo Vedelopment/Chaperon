@@ -17,10 +17,10 @@ function create(req, res) {
   console.log('body', req.body);
 
   // split at comma and remove and trailing space
-  if (req.body.genres) {
-    var genres = req.body.genres.split(',').map(function(item) { return item.trim(); } );
-    req.body.genres = genres;
-  }
+  // if (req.body.genres) {
+  //   var genres = req.body.genres.split(',').map(function(item) { return item.trim(); } );
+  //   req.body.genres = genres;
+  // }
 
   db.User.create(req.body, function(err, user) {
     if (err) { console.log('error', err); }
@@ -48,9 +48,11 @@ function update(req, res) {
   console.log('updating with data', req.body);
   db.User.findById(req.params.userId, function(err, foundUser) {
     if(err) { console.log('usersController.update error', err); }
-    foundUser.artistName = req.body.artistName;
-    foundUser.name = req.body.name;
-    foundUser.releaseDate = req.body.releaseDate;
+    foundUser.first_name = req.body.first_name;
+    foundUser.last_name = req.body.last_name;
+    foundUser.email = req.body.email;
+    foundUser.phone = req.body.phone;
+    foundUser.contacts = req.body.contacts;
     foundUser.save(function(err, savedUser) {
       if(err) { console.log('saving altered user failed'); }
       res.json(savedUser);

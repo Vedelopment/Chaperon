@@ -1,7 +1,10 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+// SERVER-SIDE JAVASCRIPT
 
+//require express in our app
+var express = require('express');
 var app = express();
+
+var bodyParser = require('body-parser');
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
@@ -26,10 +29,11 @@ app.get('/meow', function homepage (req, res) {
 });
 
 // all other routes should defer to angular routing
-app.get('/:name', function templates(req, res) {
+app.get('/templates/:name', function templates(req, res) {
   var name = req.params.name;
   res.sendFile(__dirname + '/views/templates/' + name + '.html');
 });
+
 
 /*
  * JSON API Endpoints

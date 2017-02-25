@@ -11,6 +11,7 @@ function UsersShowController ($http, $routeParams) {
     method: 'GET',
     url: '/api/users/'+$routeParams.id
   }).then(function successCallback(json) {
+    console.log(json);
     vm.user = json.data;
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);

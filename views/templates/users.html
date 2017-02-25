@@ -2,6 +2,12 @@
 
   <h1>Users:</h1>
 
-  <h1>hello: {{usersIndexCtrl.hello}}</h1>
+  <h1>hello: {{usersIndexCtrl.user.first_name}}</h1>
 
+  <div ng-repeat="user in usersIndexCtrl.users | orderBy: 'last_name' | filter: searchText" class="row">
+    <ul>
+      <li><a ng-href="users/{{user._id}}">{{user.last_name}}, {{user.first_name}}</a></li>
+      <li>{{user.email}}
+    </ul>
+  </div>
 </div>

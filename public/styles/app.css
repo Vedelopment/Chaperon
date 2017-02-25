@@ -1,0 +1,18 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+i {
+  padding: 0.1em;
+}
+.dev-header {
+  font-family: 'Armata', sans-serif;
+  font-size: 3.5em;
+  color: white;
+  background-color: rgb(48, 188, 146);
+  margin-top: 0;
+  padding: 0.3em;
+  text-align: center;
+}
+.dev-logo {
+  max-width: 1em;
+}

@@ -4,6 +4,12 @@ body {
 i {
   padding: 0.1em;
 }
+h1, h2, h3, h4, h5, h6 {
+  /*margin: 5px;*/
+}
+ul {
+  list-style: none;
+}
 .dev-header {
   font-family: 'Armata', sans-serif;
   font-size: 3.5em;
@@ -15,4 +21,10 @@ i {
 }
 .dev-logo {
   max-width: 1em;
+}
+.dev-card {
+  margin: 1em;
+  padding: 0.2em;
+  border: 1px solid black;
+  border-radius: 3px;
 }

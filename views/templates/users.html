@@ -89,13 +89,33 @@
         <div>
           <ul>
             <li>
+              <label ng-show="editing"><p class="dev-label">Username</p></label>
               <span ng-hide="editing"><a ng-href="users/{{user._id}}">{{user.username}}</a></span>
               <input ng-show="editing" ng-model="user.username" type="text">
             </li>
 
             <li>
-              <span ng-hide="editing">{{user.first_name}} {{user.last_name}}</span>
+              <label ng-show="editing"><p class="dev-label">First Name</p></label>
+              <span ng-hide="editing">{{user.first_name}}</span>
               <input ng-show="editing" ng-model="user.first_name" type="text">
+            </li>
+
+            <li ng-show="editing" >
+              <label><p class="dev-label">Last Name</p></label>
+              <span ng-hide="editing">{{user.last_name}}</span>
+              <input ng-model="user.last_name" type="text">
+            </li>
+
+            <li ng-show="editing" >
+              <label><p class="dev-label">Email</p></label>
+              <span ng-hide="editing">{{user.email}}</span>
+              <input ng-model="user.email" type="text">
+            </li>
+
+            <li ng-show="editing" >
+              <label><p class="dev-label">Phone Number</p></label>
+              <span ng-hide="editing">{{user.phone}}</span>
+              <input ng-model="user.phone" type="text">
             </li>
 
             <!-- <li>

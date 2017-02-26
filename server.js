@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+mongoose.connect(process.env.MONGOLAB_URI);
+
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -49,6 +49,7 @@ input {
 }
 button {
   font-size: 1.5em;
+  font-weight: bold;
   margin: 0 0.5em 0 0;
   padding: 0.5em;
   border-radius: 0.2em;
@@ -75,7 +76,8 @@ button {
   color: white;
 }
 .dev-color, dev-color:visited {
-  color: white;
+  color: black;
+  font-weight: bold;
 }
 .dev-logo {
   max-width: 1em;
@@ -115,3 +117,8 @@ button {
   background-color: rgb(254, 135, 138);
   border: none;
 }
+/*@media (max-width: 600px) {
+  button {
+    color: red;
+  }
+}*/

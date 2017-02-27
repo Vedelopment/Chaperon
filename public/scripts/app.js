@@ -27,6 +27,11 @@ function config ($routeProvider, $locationProvider) {
       controllerAs: 'usersShowCtrl',
       controller: 'UsersShowController'
     })
+    .when('/signup', {
+      templateUrl: '/templates/signup',
+      controllerAs: 'usersShowCtrl',
+      controller: 'UsersShowController'
+    })
     .otherwise({
       templateUrl:'templates/404' // Render 404 view
     })

@@ -1,0 +1,61 @@
+<div>
+
+  <!-- Form Name -->
+
+  <form  class="dev-card" ng-show="signup" ng-submit="usersIndexCtrl.createUser()">
+
+    <h5 class="dev-center">Sign up for an account</h5>
+
+    <div  class="dev-card-list">
+      <!-- Text input-->
+      <div>
+        <label><p class="dev-label">Username</p></label>
+        <div>
+        <input ng-model="usersIndexCtrl.newUser.username" type="text" required="">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div>
+        <label><p class="dev-label">First Name</p></label>
+        <div>
+        <input ng-model="usersIndexCtrl.newUser.first_name" type="text" required="">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div>
+        <label><p class="dev-label">Last Name</p></label>
+        <div>
+        <input ng-model="usersIndexCtrl.newUser.last_name" type="text">
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div>
+        <label><p class="dev-label">Email</p></label>
+        <div>
+        <input ng-model="usersIndexCtrl.newUser.email" type="text">
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div>
+        <label><p class="dev-label">Phone Number</p></label>
+        <div>
+          <input class="form-control" ng-model="usersIndexCtrl.newUser.genres"></input>
+        </div>
+      </div>
+
+
+      <!-- Button -->
+      <div>
+        <label><p class="dev-label">Save User</p></label>
+        <div>
+          <!-- <button class="btn btn-primary">Submit</button> -->
+          <button class='dev-btn-save' ng-click="usersIndexCtrl.createUser(user); signup = false">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

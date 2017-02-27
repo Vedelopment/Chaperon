@@ -27,6 +27,9 @@ function config ($routeProvider, $locationProvider) {
       controllerAs: 'usersShowCtrl',
       controller: 'UsersShowController'
     })
+    .otherwise({
+      templateUrl:'/404.html' // Render 404 view
+    })
 
     $locationProvider.html5Mode({
       enabled: true,

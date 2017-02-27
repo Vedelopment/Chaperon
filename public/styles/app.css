@@ -30,13 +30,10 @@ h6 {
 font-size: 1em;
 }
 a, a:hover {
+  color: rgb(40, 142, 255);
+  font-weight: bold;
   text-decoration: none;
 }
-a {
-  color: ();
-  font-weight: bold;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -73,6 +70,12 @@ button {
   margin: 0 0 0 0;
   padding: 0.3em;
   text-align: center;
+}
+.dev-header a {
+  color: white;
+}
+.dev-color, dev-color:visited {
+  color: white;
 }
 .dev-logo {
   max-width: 1em;

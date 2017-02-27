@@ -28,6 +28,7 @@ function UsersIndexController ($http) {
       url: '/api/users',
       data: vm.newUser,
     }).then(function successCallback(response) {
+      console.log('i made a person');
       vm.users.push(response.data);
     }, function errorCallback(response) {
       console.log('There was an error posting the data', response);

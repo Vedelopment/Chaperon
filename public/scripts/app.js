@@ -42,13 +42,13 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('users', {
       url: '/users',
-      templateUrl: '/templates/users',
+      templateUrl: '/templates/users.html',
       controllerAs: 'usersIndexCtrl',
       controller: 'UsersIndexController'
     })
     .state('/users/:id', {
       url: '/user',
-      templateUrl: '/templates/users-show',
+      templateUrl: '/templates/users-show.html',
       controllerAs: 'usersShowCtrl',
       controller: 'UsersShowController'
     })

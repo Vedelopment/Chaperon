@@ -47,13 +47,13 @@ app.get(['/'], function (req, res) {
 
 // route to special page of meow
 app.get('/meow', function homepage (req, res) {
-  res.sendFile(__dirname + '/views/templates/meow.html');
+  res.sendFile(__dirname + '/templates/meow.html');
 });
 
 // all other routes should defer to angular routing
 app.get('/templates/:name', function templates(req, res) {
   var name = req.params.name;
-  res.sendFile(__dirname + '/views/templates/' + name + '.html');
+  res.sendFile(__dirname + '/templates/' + name + '.html');
 });
 
 

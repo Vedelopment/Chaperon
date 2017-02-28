@@ -1,8 +1,29 @@
 <div>
 
-  <!-- Form Name -->
+  <!-- <h3 class="text-center">Welcome!</h3>
+  <hr>
+  <form ng-submit="sc.signup()">
+  	<div class="form-group">
+  	  <input type="text" ng-model="sc.new_user.displayName" placeholder="Full Name">
+  	</div>
+    <div class="form-group">
+      <input type="text" ng-model="sc.new_user.username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="sc.new_user.email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" ng-model="sc.new_user.password" placeholder="Password">
+    </div>
+    <input type="submit" value="Sign Up" class="btn btn-block btn-info">
+  </form>
+  <br> -->
 
-  <form  class="dev-card" ng-show="signup" ng-submit="usersIndexCtrl.createUser()">
+
+  <!-- Form Name -->
+  <p class="text-muted">Already have an account? <a ui-sref="login">Log in here.</a></p>
+
+  <form  class="dev-card" ng-submit="sc.signup()">
   <!-- <form  class="dev-card" ng-show="signup" ng-submit="sc.signup()"> -->
 
     <h5 class="dev-center">Sign up for an account</h5>
@@ -12,7 +33,7 @@
       <div>
         <label><p class="dev-label">Username</p></label>
         <div>
-        <input ng-model="usersIndexCtrl.newUser.username" type="text" required="">
+        <input ng-model="sc.new_user.username" type="text" required="">
         </div>
       </div>
 
@@ -20,7 +41,7 @@
       <div>
         <label><p class="dev-label">First Name</p></label>
         <div>
-        <input ng-model="usersIndexCtrl.newUser.first_name" type="text" required="">
+        <input ng-model="sc.new_user.first_name" type="text" required="">
         </div>
       </div>
 
@@ -28,7 +49,7 @@
       <div>
         <label><p class="dev-label">Last Name</p></label>
         <div>
-        <input ng-model="usersIndexCtrl.newUser.last_name" type="text">
+        <input ng-model="sc.new_user.last_name" type="text">
         </div>
       </div>
 
@@ -36,7 +57,7 @@
       <div>
         <label><p class="dev-label">Email</p></label>
         <div>
-        <input ng-model="usersIndexCtrl.newUser.email" type="text">
+        <input ng-model="sc.new_user.email" type="text">
         </div>
       </div>
 
@@ -44,7 +65,7 @@
       <div>
         <label><p class="dev-label">Phone Number</p></label>
         <div>
-          <input class="form-control" ng-model="usersIndexCtrl.newUser.phone"></input>
+          <input ng-model="sc.new_user.phone"></input>
         </div>
       </div>
 
@@ -52,17 +73,17 @@
       <div>
         <label><p class="dev-label">Password</p></label>
         <div>
-          <input type="password" class="form-control" ng-model="usersIndexCtrl.newUser.password"></input>
+          <input type="password" ng-model="sc.new_user.password"></input>
         </div>
       </div>
 
 
       <!-- Button -->
-      <div>
+      <!-- <div>
         <label><p class="dev-label">Save User</p></label>
-        <div>
+        <div> -->
           <!-- <button class="btn btn-primary">Submit</button> -->
-          <button class='dev-btn-save' ng-click="usersIndexCtrl.createUser(user); signup = false">Save Changes</button>
+          <button class='dev-btn-save' ng-click="usersIndexCtrl.createUser(user); signup = false">Sign up</button>
         </div>
       </div>
     </div>

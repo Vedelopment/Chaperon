@@ -3,6 +3,7 @@
   <!-- Form Name -->
 
   <form  class="dev-card" ng-show="signup" ng-submit="usersIndexCtrl.createUser()">
+  <!-- <form  class="dev-card" ng-show="signup" ng-submit="sc.signup()"> -->
 
     <h5 class="dev-center">Sign up for an account</h5>
 
@@ -43,7 +44,15 @@
       <div>
         <label><p class="dev-label">Phone Number</p></label>
         <div>
-          <input class="form-control" ng-model="usersIndexCtrl.newUser.genres"></input>
+          <input class="form-control" ng-model="usersIndexCtrl.newUser.phone"></input>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div>
+        <label><p class="dev-label">Password</p></label>
+        <div>
+          <input type="password" class="form-control" ng-model="usersIndexCtrl.newUser.password"></input>
         </div>
       </div>
 

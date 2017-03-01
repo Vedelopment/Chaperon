@@ -24,7 +24,7 @@ function create(req, res) {
 
   db.User.create(req.body, function(err, user) {
     if (err) { console.log('error', err); }
-    console.log(user);
+    console.log(("In server controller"));
     res.json(user);
   });
 }

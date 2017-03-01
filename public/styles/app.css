@@ -29,14 +29,11 @@ font-size: 1.5em;
 h6 {
 font-size: 1em;
 }
-a, a:hover {
+a {
+  color: rgb(40, 142, 255);
+  font-weight: bold;
   text-decoration: none;
 }
-a {
-  color: ();
-  font-weight: bold;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -51,10 +48,16 @@ input {
   border-radius: 2px;
 }
 button {
+  /*cursor: crosshair;*/
   font-size: 1.5em;
+  font-weight: bold;
   margin: 0 0.5em 0 0;
-  padding: 0.5em;
+  padding: 15px;
   border-radius: 0.2em;
+}
+button:hover {
+  border: 1px solid black;
+  padding: 14px;
 }
 .dev-label {
   margin: 0;
@@ -73,6 +76,13 @@ button {
   margin: 0 0 0 0;
   padding: 0.3em;
   text-align: center;
+}
+.dev-header a {
+  color: white;
+}
+.dev-color, dev-color:visited {
+  color: black;
+  font-weight: bold;
 }
 .dev-logo {
   max-width: 1em;
@@ -112,3 +122,8 @@ button {
   background-color: rgb(254, 135, 138);
   border: none;
 }
+/*@media (max-width: 600px) {
+  button {
+    color: red;
+  }
+}*/

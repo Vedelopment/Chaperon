@@ -1,0 +1,29 @@
+<div>
+
+  <h3 class="text-center">Welcome!</h3>
+  <hr>
+  <form ng-submit="sc.signup()">
+  	<div>
+  	  <input type="text" ng-model="sc.new_user.username" placeholder="Username">
+  	</div>
+    <div>
+      <input type="text" ng-model="sc.new_user.first_name" placeholder="First Name">
+    </div>
+    <div>
+      <input type="text" ng-model="sc.new_user.last_name" placeholder="Last Name">
+    </div>
+    <div>
+      <input type="text" ng-model="sc.new_user.email" placeholder="Email">
+    </div>
+    <div>
+      <input type="text" ng-model="sc.new_user.phone" placeholder="Phone Number">
+    </div>
+    <div>
+      <input type="password" ng-model="sc.new_user.password" placeholder="Password">
+    </div>
+    <input type="submit" value="Sign Up" class="btn btn-block btn-info">
+  </form>
+  <br>
+  <p class="text-muted">Already have an account? <a ui-sref="login">Log in here.</a></p>
+
+</div>

@@ -129,7 +129,7 @@ app.get(['/', '/signup', '/login', '/logout', '/profile'], function (req, res) {
 /*
  * Listen on localhost:3000
  */
-app.listen(9000, function() {
+app.listen(process.env.PORT || 9000, function() {
   console.log('server started');
 });
 

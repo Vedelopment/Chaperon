@@ -49,15 +49,16 @@ input {
 }
 button {
   /*cursor: crosshair;*/
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   margin: 0 0.5em 0 0;
-  padding: 15px;
+  padding: 12px;
   border-radius: 0.2em;
 }
 button:hover {
-  border: 1px solid black;
-  padding: 14px;
+  background-color: yellow  ;
+  /*border: 1px solid black;*/
+  /*padding: 11px;*/
 }
 .dev-label {
   margin: 0;
@@ -88,6 +89,9 @@ button:hover {
   max-width: 1em;
 }
 .dev-nav {
+  width: 100%;
+  margin: 0;
+  background-color: rgba(0, 0, 0, .9);
   padding: 1em;
 }
 .dev-card {

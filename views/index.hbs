@@ -31,16 +31,14 @@
 
   </head>
   <body ng-controller="MainController as main">
-    <div>
-      <header class="dev-header"><a href="/"><i class="fa fa-user-circle" aria-hidden="true"></i> Chaperon</a></header>
-    </div>
-
+    <header class="dev-header"><a href="/"><i class="fa fa-user-circle" aria-hidden="true"></i> Chaperon</a></header>
     <div class="dev-nav">
       <a ui-sref="login" class="dev-color"><button class='dev-btn-save' ng-show="!main.currentUser()">Log In</button></a>
       <a ui-sref="logout" class="dev-color"><button class='dev-btn-save' ng-show="main.currentUser()">Log Out</button></a>
       <a ui-sref="signup" class="dev-color"><button class='dev-btn-edit' ng-show="!main.currentUser()">Sign Up</button></a>
-      <a ui-sref="profile"><h4 ng-show="main.currentUser()">\{{main.currentUser().username}}</h4></a>
     </div>
+
+    <a ui-sref="profile"><h4 ng-show="main.currentUser()">\{{main.currentUser().username}}</h4></a>
 
     <!-- LINK MAIN CONTROLLER? -->
     <!-- <li ng-show="!main.currentUser()"><a ui-sref="signup">Sign Up</a></li>

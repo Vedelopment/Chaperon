@@ -1,15 +1,22 @@
-<h4>Contacts</h4>
-<hr>
-<!-- <p ng-if="home.posts.length === 0">No posts yet.</p> -->
+<div class="dev-center">
+	<h5>Welcome to Chaperon, your personal safety app.</h5>
+</div>
 
-<div ng-if="home.posts.length > 0">
-	<ul class="dev-card" ng-repeat="post in home.posts">
-		<li class="dev-label"><strong>{{post.first_name}} {{post.last_name}}</strong></li>
-		<li class="dev-label">{{post.phone}}</li>
-	</ul>
+<div ng-show="!main.currentUser()">
+	<p>test</p>
 </div>
 
 <div ng-show="main.currentUser()">
+	<h4>Contacts</h4>
+	<hr>
+	<!-- <p ng-if="home.posts.length === 0">No posts yet.</p> -->
+
+	<div ng-if="home.posts.length > 0">
+		<ul class="dev-card" ng-repeat="post in home.posts">
+			<li class="dev-label"><strong>{{post.first_name}} {{post.last_name}}</strong></li>
+			<li class="dev-label">{{post.phone}}</li>
+		</ul>
+	</div>
 	<br>
 	<h4>Add New Contact</h4>
 	<hr>

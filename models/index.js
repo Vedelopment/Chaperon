@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/chaperon");
+mongoose.createConnection("mongodb://localhost/chaperon");
 
 var User = require('./user');
 

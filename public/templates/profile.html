@@ -1,0 +1,38 @@
+<h3>{{main.currentUser.username}}</h3>
+<p><strong>First Name:</strong> {{main.currentUser().first_name}}</p>
+
+<p><strong>Emergency Contacts:</strong> {{main.currentUser().contacts.length}}</p>
+
+
+<hr>
+<a href="#" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm"><i class="fa fa-pencil"></i> Edit Profile</a>
+
+<form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
+	<div>
+		<input type="text" placeholder="Username"
+		ng-model="profile.new_profile.username"
+		ng-value="main.currentUser().username">
+	</div>
+	<div>
+	  <input type="text" placeholder="First Name"
+      ng-model="profile.new_profile.first_name"
+        ng-value="main.currentUser().first_name">
+	</div>
+	<div>
+	  <input type="text" placeholder="Last Name"
+      ng-model="profile.new_profile.last_name"
+        ng-value="main.currentUser().last_name">
+	</div>
+  <div>
+    <input type="text" placeholder="Email"
+      ng-model="profile.new_profile.email"
+        ng-value="main.currentUser().email">
+  </div>
+  <div>
+    <input type="text" placeholder="Phone"
+      ng-model="profile.new_profile.phone"
+        ng-value="main.currentUser().phone">
+  </div>
+  <button class="dev-btn-edit" type="submit" value="Edit Profile">Edit</button>
+  <button class="dev-btn-delete" ng-click="profile.showEditForm=false">Cancel</button>
+</form>

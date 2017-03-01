@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/Vedelopment/Chaperon#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.16.1",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
+    "hbs": "^4.0.1",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.17.1",
     "mongoose": "^4.8.4"
   }
 }

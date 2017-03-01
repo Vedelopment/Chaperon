@@ -12,6 +12,7 @@ var userSchema = new Schema({
   phone: String,
   password: { type: String, select: false },
   // posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
+  contacts: [{type: Schema.ObjectId, ref: 'User'}]
 });
 
 userSchema.pre('save', function (next) {

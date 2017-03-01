@@ -113,21 +113,31 @@ function MainController (Account) {
 HomeController.$inject = ["$http"]; // minification protection
 function HomeController ($http) {
   var vm = this;
-  vm.posts = [];
-  vm.new_post = {}; // form data
+  vm.users = [];
+  vm.new_user = {}; // form data
 
-  $http.get('/api/posts')
+  $http.get('/api/contacts')
     .then(function (response) {
       vm.posts = response.data;
     });
 
-  vm.createPost = function() {
-    $http.post('/api/posts', vm.new_post)
+  vm.signup = function() {
+    $http.post('/api/contacts', vm.new_user)
       .then(function (response) {
-        vm.new_post = {};
-        vm.posts.push(response.data);
+        vm.new_user = {};
+        vm.users.push(response.data);
       });
   };
+  // vm.signup = function() {
+  //   Account
+  //     .signup(vm.new_user)
+  //     .then(
+  //       function (response) {
+  //         vm.new_user = {}; // clear sign up form
+  //         vm.contacts.push(response.data);
+  //       }
+  //     );
+  // };
 }
 
 LoginController.$inject = ["$location", "Account"]; // minification protection
@@ -432,7 +442,7 @@ function Account($http, $q, $auth) {
 // //   });
 // //
 // //   vm.createUser = function() {
-// //     $http.post('/api/posts', vm.new_user)
+// //     $http.post('/api/contacts', vm.new_user)
 // //     .then(function (response) {
 // //       vm.new_user = {};
 // //       vm.posts.push(response.data);

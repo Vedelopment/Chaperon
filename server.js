@@ -1,3 +1,4 @@
+
 // require express and other modules
 var express = require('express'),
     app = express(),
@@ -33,8 +34,16 @@ var User = require('./models/user');
 
 app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
-    res.send(user.populate('posts'));
+    res.send(user.populate('contacts'));
   });
+  // User.findById(id)
+  //  .populate('friends')
+  //  .exec(function (err, user) {
+  //      if (err) throw err;
+  //
+  //      // user.friends is array of users
+  //      console.log(user.friends)
+  //  })
 });
 
 app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
@@ -43,7 +52,6 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
       return res.status(400).send({ message: 'User not found.' });
     }
     user.username = req.body.username || user.username;
-    user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
     user.save(function(err) {
       res.send(user);
@@ -51,15 +59,17 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-app.get('/api/posts', function (req, res) {
+app.get('/api/contacts', function (req, res) {
   res.json([
   {
-    title: "Hardcoded Title",
-    content: "Here is some great hardcoded content for the body of a blog post. Happy coding!"
+    first_name: "John",
+    last_name: "Leslie",
+    phone: "555-555-5555"
   },
   {
-    title: "Another Post",
-    content: "MEAN stack is the best stack."
+    first_name: "Marsha",
+    last_name: "Leslie",
+    phone: "555-555-5555"
   }
   ]);
 });

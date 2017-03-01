@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 // set view engine to hbs (handlebars)
 app.set('view engine', 'hbs');
 
-// connect to mongodb and set local route for database storage
+// connect to mongodb
 mongoose.connect('mongodb://localhost/chaperon');
 
 // require User and Post models
@@ -43,28 +43,26 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
       return res.status(400).send({ message: 'User not found.' });
     }
     user.username = req.body.username || user.username;
-    user.first_name = req.body.first_name || user.first_name;
-    user.last_name = req.body.last_name || user.last_name;
+    user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
-    user.phone = req.body.phone || user.phone;
     user.save(function(err) {
       res.send(user);
     });
   });
 });
 
-// app.get('/api/posts', function (req, res) {
-//   res.json([
-//   {
-//     title: "Hardcoded Title",
-//     content: "Here is some great hardcoded content for the body of a blog post. Happy coding!"
-//   },
-//   {
-//     title: "Another Post",
-//     content: "MEAN stack is the best stack."
-//   }
-//   ]);
-// });
+app.get('/api/posts', function (req, res) {
+  res.json([
+  {
+    title: "Hardcoded Title",
+    content: "Here is some great hardcoded content for the body of a blog post. Happy coding!"
+  },
+  {
+    title: "Another Post",
+    content: "MEAN stack is the best stack."
+  }
+  ]);
+});
 
 
 /*
@@ -80,8 +78,6 @@ app.post('/auth/signup', function (req, res) {
     }
     var user = new User({
       username: req.body.username,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password
     });
@@ -95,7 +91,7 @@ app.post('/auth/signup', function (req, res) {
 });
 
 app.post('/auth/login', function (req, res) {
-  User.findOne({ email: req.body.email }, function (err, user) {
+  User.findOne({ email: req.body.email }, '+password', function (err, user) {
     if (!user) {
       return res.status(401).send({ message: 'Invalid email or password.' });
     }
@@ -120,18 +116,19 @@ app.get(['/', '/signup', '/login', '/logout', '/profile'], function (req, res) {
 /*
  * Listen on localhost:3000
  */
-// app.listen(9000, function() {
-//   console.log('server started');
-// });
+app.listen(9000, function() {
+  console.log('server started');
+});
+
 
 // ////////////////////
 // //    SERVER      //
 // ////////////////////
 //
 // // listen to env OR on port 3000
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server is running on http://localhost:3000/ because AWESOME.');
-});
+// app.listen(process.env.PORT || 3000, function () {
+//   console.log('Express server is running on http://localhost:3000/ because AWESOME.');
+// });
 
 // // SERVER-SIDE JAVASCRIPT
 //
@@ -159,8 +156,8 @@ app.listen(process.env.PORT || 3000, function () {
 // // set view engine to hbs (handlebars)
 // app.set('view engine', 'hbs');
 //
-// // connect to mongodb and set local route for database storage - changed this code to .connect instead of .connect (why??)
-// mongoose.connect('mongodb://localhost/chaperon');
+// // connect to mongodb - changed this code to .createConnection instead of .connect (why??)
+// mongoose.createConnection('mongodb://localhost/chaperon');
 //
 // var controllers = require('./controllers');
 //

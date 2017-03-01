@@ -1,6 +1,9 @@
 <h3>{{main.currentUser.username}}</h3>
 <p><strong>First Name:</strong> {{main.currentUser().first_name}}</p>
 
+<p><strong>Emergency Contacts:</strong> {{main.currentUser().contacts.length}}</p>
+
+
 <hr>
 <a href="#" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm"><i class="fa fa-pencil"></i> Edit Profile</a>
 

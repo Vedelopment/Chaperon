@@ -1,6 +1,7 @@
 var jwt = require('jwt-simple'),
     moment = require('moment');
 
+
 module.exports = {
   /*
   * Login Required Middleware

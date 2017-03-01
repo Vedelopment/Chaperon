@@ -5,7 +5,7 @@ angular
     'satellizer'
   ])
   .controller('MainController', MainController)
-  .controller('HomeController', HomeController)
+  // .controller('HomeController', HomeController)
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)
   .controller('LogoutController', LogoutController)
@@ -87,11 +87,14 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
+    .state('meow', {
+      url: '/meow',
+      templateUrl: 'templates/meow.html'
+    })
     .state('404', {
       url: '/404',
       templateUrl: 'templates/404.html'
     })
-    console.log('sanity 2');
 
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
@@ -129,25 +132,25 @@ MainController.$inject = ["Account"]; // minification protection
 
 }
 
-HomeController.$inject = ["$http"]; // minification protection
-function HomeController ($http) {
-  var vm = this;
-  vm.users = [];
-  vm.new_user = {}; // form data
-
-  $http.get('/api/users')
-  .then(function (response) {
-    vm.users = response.data;
-  });
-
-  vm.createUser = function() {
-    $http.post('/api/posts', vm.new_user)
-    .then(function (response) {
-      vm.new_user = {};
-      vm.posts.push(response.data);
-    });
-  };
-}
+// HomeController.$inject = ["$http"]; // minification protection
+// function HomeController ($http) {
+//   var vm = this;
+//   vm.users = [];
+//   vm.new_user = {}; // form data
+//
+//   $http.get('/api/users')
+//   .then(function (response) {
+//     vm.users = response.data;
+//   });
+//
+//   vm.createUser = function() {
+//     $http.post('/api/posts', vm.new_user)
+//     .then(function (response) {
+//       vm.new_user = {};
+//       vm.posts.push(response.data);
+//     });
+//   };
+// }
 
 LoginController.$inject = ["$location", "Account"]; // minification protection
 function LoginController ($location, Account) {

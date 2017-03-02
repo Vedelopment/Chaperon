@@ -11,6 +11,7 @@ var userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   phone: String,
   password: { type: String, select: false },
+  // posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
   contacts: [{type: Schema.ObjectId, ref: 'User'}]
 });
 

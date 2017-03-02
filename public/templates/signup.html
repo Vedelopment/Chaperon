@@ -1,6 +1,7 @@
-<div class="dev-center dev-card-header">
-  <h4>Sign up</h4>
-  <p class="text-muted">Already have an account? <a ui-sref="login">Log in here.</a></p>
+<div>
+
+  <h3 class="text-center">Welcome!</h3>
+  <hr>
   <form ng-submit="sc.signup()">
   	<div>
   	  <input type="text" ng-model="sc.new_user.username" placeholder="Username">
@@ -22,4 +23,7 @@
     </div>
     <input type="submit" value="Sign Up" class="btn btn-block btn-info">
   </form>
+  <br>
+  <p class="text-muted">Already have an account? <a ui-sref="login">Log in here.</a></p>
+
 </div>

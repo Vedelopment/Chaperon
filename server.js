@@ -22,8 +22,9 @@ app.set('view engine', 'hbs');
 // connect to mongodb
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chaperon');
 
-// require User and Post models
+// require User models
 var User = require('./models/user');
+var controllers = require('./controllers');
 
 /*
  * API Routes
@@ -57,6 +58,8 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
     });
   });
 });
+
+app.get('/api/users', controllers.users.index);
 
 app.get('/api/contacts', function (req, res) {
   res.json([

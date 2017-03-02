@@ -32,15 +32,13 @@ userList.push(
   {"username":"ddaym","first_name":"Dennis","last_name":"Day","email":"ddaym@ycombinator.com","phone":null,"password":"80i6n7cli"}
 
 );
-console.log('outside remove seed');
 
 User.remove({}, function(err, users){
-  console.log('remove seed');
 
   User.create(userList, function(err, users){
     if (err) { return console.log('ERROR seeding: ', err); }
     console.log("users:", users);
-    console.log("I made ", users.length, "of the things!");
+    console.log("I made", users.length, "of the things!");
     process.exit();
   });
 

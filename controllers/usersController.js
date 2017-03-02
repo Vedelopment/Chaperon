@@ -2,13 +2,13 @@
  * DATABASE *
  ************/
 
-var db = require('../models');
+var User = require('../models/user');
 
 
 
 // GET /api/users
 function index(req, res) {
-  db.User.find({}, function(err, allUsers) {
+  User.find({}, function(err, allUsers) {
     res.json(allUsers);
   });
 }
@@ -22,7 +22,7 @@ function create(req, res) {
   //   req.body.genres = genres;
   // }
 
-  db.User.create(req.body, function(err, user) {
+  User.create(req.body, function(err, user) {
     if (err) { console.log('error', err); }
     console.log(("In server controller"));
     res.json(user);
@@ -30,7 +30,7 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  db.User.findById(req.params.userId, function(err, foundUser) {
+  User.findById(req.params.userId, function(err, foundUser) {
     if(err) { console.log('usersController.show error', err); }
     console.log('usersController.show responding with', foundUser);
     res.json(foundUser);
@@ -38,7 +38,7 @@ function show(req, res) {
 }
 
 function destroy(req, res) {
-  db.User.findOneAndRemove({ _id: req.params.userId }, function(err, foundUser){
+  User.findOneAndRemove({ _id: req.params.userId }, function(err, foundUser){
     // note you could send just send 204, but we're sending 200 and the deleted entity
     res.json(foundUser);
   });
@@ -46,7 +46,7 @@ function destroy(req, res) {
 
 function update(req, res) {
   console.log('updating with data', req.body);
-  db.User.findById(req.params.userId, function(err, foundUser) {
+  User.findById(req.params.userId, function(err, foundUser) {
     if(err) { console.log('usersController.update error', err); }
     foundUser.first_name = req.body.first_name;
     foundUser.last_name = req.body.last_name;

@@ -1,4 +1,6 @@
-var db = require("./models");
+var User = require("./models/user");
+// var mongoose = require("mongoose");
+// mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/chaperon" );
 
 var userList =[];
 
@@ -30,10 +32,12 @@ userList.push(
   {"username":"ddaym","first_name":"Dennis","last_name":"Day","email":"ddaym@ycombinator.com","phone":null,"password":"80i6n7cli"}
 
 );
+console.log('outside remove seed');
 
-db.User.remove({}, function(err, users){
+User.remove({}, function(err, users){
+  console.log('remove seed');
 
-  db.User.create(userList, function(err, users){
+  User.create(userList, function(err, users){
     if (err) { return console.log('ERROR seeding: ', err); }
     console.log("users:", users);
     console.log("I made ", users.length, "of the things!");

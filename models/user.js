@@ -2,6 +2,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt = require('bcryptjs');
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chaperon');
+
 var userSchema = new Schema({
   created: { type: Date },
   updated: { type: Date },

@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/chaperon');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chaperon');
 
 // require User and Post models
 var User = require('./models/user');

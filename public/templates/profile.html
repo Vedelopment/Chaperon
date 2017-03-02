@@ -1,38 +1,43 @@
 <h3>{{main.currentUser.username}}</h3>
-<p><strong>First Name:</strong> {{main.currentUser().first_name}}</p>
 
-<p><strong>Emergency Contacts:</strong> {{main.currentUser().contacts.length}}</p>
+<div class="dev-card-left">
 
+	<ul ng-hide="profile.showEditForm">
+		<li class="dev-label"><strong>First Name:</strong> {{main.currentUser().first_name}}</li>
+		<li class="dev-label"><strong>First Name:</strong> {{main.currentUser().last_name}}</li>
+		<li class="dev-label"><strong>First Name:</strong> {{main.currentUser().email}}</li>
+		<li class="dev-label"><strong>Emergency Contacts:</strong> {{main.currentUser().contacts.length}}</li>
+		<button class="dev-btn-edit dev-marg" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm">Edit Profile</button>
+	</ul>
 
-<hr>
-<a href="#" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm"><i class="fa fa-pencil"></i> Edit Profile</a>
+	<form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
+		<div>
+			<input type="text" placeholder="Username"
+			ng-model="profile.new_profile.username"
+			ng-value="main.currentUser().username">
+		</div>
+		<div>
+			<input type="text" placeholder="First Name"
+			ng-model="profile.new_profile.first_name"
+			ng-value="main.currentUser().first_name">
+		</div>
+		<div>
+			<input type="text" placeholder="Last Name"
+			ng-model="profile.new_profile.last_name"
+			ng-value="main.currentUser().last_name">
+		</div>
+		<div>
+			<input type="text" placeholder="Email"
+			ng-model="profile.new_profile.email"
+			ng-value="main.currentUser().email">
+		</div>
+		<div>
+			<input type="text" placeholder="Phone"
+			ng-model="profile.new_profile.phone"
+			ng-value="main.currentUser().phone">
+		</div>
+		<button class="dev-btn-save dev-marg" type="submit" value="Edit Profile">Save</button>
+		<button class="dev-btn-delete dev-marg" ng-click="profile.showEditForm=false">Cancel</button>
+	</form>
 
-<form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
-	<div>
-		<input type="text" placeholder="Username"
-		ng-model="profile.new_profile.username"
-		ng-value="main.currentUser().username">
-	</div>
-	<div>
-	  <input type="text" placeholder="First Name"
-      ng-model="profile.new_profile.first_name"
-        ng-value="main.currentUser().first_name">
-	</div>
-	<div>
-	  <input type="text" placeholder="Last Name"
-      ng-model="profile.new_profile.last_name"
-        ng-value="main.currentUser().last_name">
-	</div>
-  <div>
-    <input type="text" placeholder="Email"
-      ng-model="profile.new_profile.email"
-        ng-value="main.currentUser().email">
-  </div>
-  <div>
-    <input type="text" placeholder="Phone"
-      ng-model="profile.new_profile.phone"
-        ng-value="main.currentUser().phone">
-  </div>
-  <button class="dev-btn-edit" type="submit" value="Edit Profile">Edit</button>
-  <button class="dev-btn-delete" ng-click="profile.showEditForm=false">Cancel</button>
-</form>
+</div>

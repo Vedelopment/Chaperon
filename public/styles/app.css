@@ -105,6 +105,12 @@ button:hover {
   border: 1px solid black;
   border-radius: 3px;
 }
+.dev-card-left {
+  max-width: 700px;
+  margin: 1em;
+  border: 1px solid black;
+  border-radius: 3px;
+}
 .dev-card-header {
   border: none;
   padding: 1em;
@@ -119,6 +125,13 @@ button:hover {
   width: 300px;
   margin: 0 auto;
 }
+.dev-marg {
+  margin: 0.5em;
+}
+.dev-login {
+  font-size: 1em;
+  padding: 0.5em;
+}
 .dev-btn-save {
   background-color: rgb(120, 225, 193);
   border: none;
@@ -128,6 +141,11 @@ button:hover {
   border: none;
 }
 .dev-btn-delete {
+  background-color: rgb(254, 135, 138);
+  border: none;
+}
+.dev-btn-panic {
+  font-size: 0.7em;
   background-color: rgb(254, 135, 138);
   border: none;
 }

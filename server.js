@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 
 // connect to mongodb
-// mongoose.connect('mongodb://localhost/chaperon');
+mongoose.connect('mongodb://localhost/chaperon');
 
 // require User and Post models
 var User = require('./models/user');
@@ -126,9 +126,11 @@ app.get(['/', '/signup', '/login', '/logout', '/profile'], function (req, res) {
 
 
 /*
- * Listen on localhost:3000
+ * Listen on localhost:9000
  */
-
-app.listen(process.env.PORT || 3000, function () {
+// app.listen(9000, function() {
+//   console.log('server started');
+// });
+app.listen(process.env.PORT || 9000, function () {
   console.log('Express server is running on http://localhost:3000/ because AWESOME.');
 });

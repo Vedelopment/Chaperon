@@ -72,15 +72,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
         loginRequired: loginRequired
       }
     })
-    .state('search', {
-      url: '/search',
-      templateUrl: 'templates/search.html',
-      controller: 'SearchController',
-      controllerAs: 'search',
-      resolve: {
-        loginRequired: loginRequired
-      }
-    })
+
 
     function skipIfLoggedIn($q, $auth) {
       var deferred = $q.defer();
@@ -101,6 +93,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       }
       return deferred.promise;
     }
+
 }
 
 /////////////////
@@ -135,6 +128,16 @@ function HomeController ($http) {
         vm.users.push(response.data);
       });
   };
+  // vm.signup = function() {
+  //   Account
+  //     .signup(vm.new_user)
+  //     .then(
+  //       function (response) {
+  //         vm.new_user = {}; // clear sign up form
+  //         vm.contacts.push(response.data);
+  //       }
+  //     );
+  // };
 }
 
 LoginController.$inject = ["$location", "Account"]; // minification protection
@@ -177,6 +180,7 @@ function LogoutController ($location, Account) {
         $location.path('/login');
     });
 }
+
 
 ProfileController.$inject = ["$location", "Account"]; // minification protection
 function ProfileController ($location, Account) {
@@ -287,4 +291,6 @@ function Account($http, $q, $auth) {
         )
     );
   }
+
+
 }

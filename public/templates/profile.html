@@ -2,8 +2,9 @@
 <p><strong>First Name:</strong> {{main.currentUser().first_name}}</p>
 
 <p><strong>Emergency Contacts:</strong> {{main.currentUser().contacts.length}}</p>
-<hr>
 
+
+<hr>
 <a href="#" ng-click="profile.showEditForm=true" ng-hide="profile.showEditForm"><i class="fa fa-pencil"></i> Edit Profile</a>
 
 <form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
@@ -32,7 +33,6 @@
       ng-model="profile.new_profile.phone"
         ng-value="main.currentUser().phone">
   </div>
-  <div>
   <button class="dev-btn-edit" type="submit" value="Edit Profile">Edit</button>
   <button class="dev-btn-delete" ng-click="profile.showEditForm=false">Cancel</button>
 </form>

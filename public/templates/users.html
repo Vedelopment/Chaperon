@@ -11,10 +11,6 @@
 
     <div ng-repeat="user in usersIndexCtrl.users | orderBy: 'last_name' | filter: searchText" class="dev-card-list">
       <div class='row'>
-        <!-- <div class="col-md-3 col-xs-12 thumbnail">
-          <img src="images/800x800.png" alt="user image">
-        </div> -->
-
         <div>
           <ul>
             <li>
@@ -46,11 +42,6 @@
               <span ng-hide="editing">{{user.phone}}</span>
               <input ng-model="user.phone" type="text">
             </li>
-
-            <!-- <li>
-              <h4 class="inline-header">Songs:</h4>
-              <span ng-repeat="song in user.songs">&ndash; ({{song.trackNumber}}) {{song.name}} &ndash;</span>
-            </li> -->
           </ul>
         </div>
       </div>

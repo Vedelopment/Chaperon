@@ -4,14 +4,15 @@
 
 <div ng-show="!main.currentUser()">
 	<p class="dev-center">
-		Chaperon is a personal safety app. You can store your emergency contacts in a secure profile that will be notified by text of your location if you feel unsafe at any time. Just hit your panic button and they will be notified immediately. <a ui-sref="signup">Sign up now!</a>
+		Chaperon is a personal safety app. You can store your emergency contacts in a secure profile. If you feel safe at any time, just open your app, hit your panic button and your emergency contacts will be notified immediately with a text message that includes your stored gps location.
+	</p>
+	<p class="dev-center"><a ui-sref="signup">Sign up now!</a></p>
 	</p>
 </div>
 
 <div ng-show="main.currentUser()">
 	<h4>Contacts</h4>
 	<hr>
-	<!-- <p ng-if="home.posts.length === 0">No posts yet.</p> -->
 
 	<div ng-if="home.posts.length > 0">
 		<ul class="dev-card" ng-repeat="post in home.posts">
@@ -22,36 +23,17 @@
 	<br>
 	<h4>Add New Contact</h4>
 	<hr>
-	<form ng-submit="home.signup()">
-		<!-- <div>
-			<input type="text" ng-model="home.new_user.username" placeholder="Username">
-		</div> -->
+
+	<form ng-show="profile.showEditForm" ng-submit="profile.updateProfile()">
+
 		<div>
-			<input type="text" ng-model="home.new_user.first_name" placeholder="First Name">
+			<input type="text" placeholder="Username"
+			ng-model="profile.new_profile.username"
+			ng-value="main.currentUser().username">
 		</div>
-		<div>
-			<input type="text" ng-model="home.new_user.last_name" placeholder="Last Name">
-		</div>
-		<div>
-			<input type="text" ng-model="home.new_user.email" placeholder="Email">
-		</div>
-		<div>
-			<input type="text" ng-model="home.new_user.phone" placeholder="Phone Number">
-		</div>
-		<!-- <div>
-			<input type="password" ng-model="sc.new_user.password" placeholder="Password">
-		</div> -->
-		<input type="submit" value="Add Contact" class="btn btn-block btn-info">
+
+	  <button class="dev-btn-edit" type="submit" value="Edit Profile">Edit</button>
+	  <button class="dev-btn-delete" ng-click="profile.showEditForm=false">Cancel</button>
 	</form>
-	<!-- <form ng-show="main.currentUser()" ng-submit="home.createPost()">
-		<div>
-			<label for="post-title">Title</label>
-		  <input type="text" ng-model="home.new_post.title" id="post-title" placeholder="Make sure it's creative!">
-		</div>
-	  <div>
-	  	<label for="post-content">Content</label>
-	    <textarea ng-model="home.new_post.content" id="post-content" placeholder="Share your thoughts."></textarea>
-	  </div>
-	  <input type="submit" value="Add Post" class="btn btn-block btn-info">
-	</form> -->
+
 </div>

@@ -59,23 +59,23 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-// app.get('/api/contacts', function (req, res) {
-//   res.json(
+app.get('/api/contacts', function (req, res) {
+  res.json(
 
-  //   [
-  //     {
-  //       first_name: "John",
-  //       last_name: "Leslie",
-  //       phone: "555-555-5555"
-  //     },
-  //     {
-  //       first_name: "Marsha",
-  //       last_name: "Leslie",
-  //       phone: "555-555-5555"
-  //     }
-  //   ]
-  // );
-// });
+    // [
+    //   {
+    //     first_name: "John",
+    //     last_name: "Leslie",
+    //     phone: "555-555-5555"
+    //   },
+    //   {
+    //     first_name: "Marsha",
+    //     last_name: "Leslie",
+    //     phone: "555-555-5555"
+    //   }
+    // ]
+  );
+});
 
 
 /*
@@ -83,7 +83,6 @@ app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
  */
 
 // DEFINING AUTH ROUTES
-
 app.post('/auth/signup', function (req, res) {
   User.findOne({ email: req.body.email }, function (err, existingUser) {
     if (existingUser) {

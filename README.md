@@ -2,22 +2,34 @@
 
 Chaperon is a personal safety app. You can store your emergency contacts in a secure profile. If you feel safe at any time, just open your app, hit your panic button and your emergency contacts will be notified immediately with a text message that includes your stored gps location.
 
-[Chaperon v.1.0](https://chaperon-vedelopment.herokuapp.com)
-
 [Chaperon v.1.2](https://mychaperon.herokuapp.com/)
 
-Technologies:
+[Chaperon v.1.0](https://chaperon-vedelopment.herokuapp.com)
+
+## Technologies:
+
 [MongoDB](https://www.mongodb.com/)
+
 MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database.
+
 [Express](http://expressjs.com/)
+
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
 [Angular](https://angularjs.org/)
+
 Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript (JS) and other languages.
+
 [Node](https://nodejs.org/en/)
+
 Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
 [Satellizer - Angular auth module](https://github.com/sahat/satellizer)
+
 Satellizer is a simple to use, end-to-end, token-based authentication module for AngularJS
-[AgularUI Router](https://github.com/angular-ui/ui-router)
+
+[AngularUI Router](https://github.com/angular-ui/ui-router)
+
 Angular UI-Router is a client-side Single Page Application routing framework for AngularJS.
 
 ## Future Chaperon
@@ -42,6 +54,8 @@ Here are just a few use cases:
 ![oblique strategies](https://s-media-cache-ak0.pinimg.com/736x/04/05/93/04059394c5b812b4fc343f9a43520a95.jpg)
 
 [Oblique Strategies](http://www.rtqe.net/ObliqueStrategies/)
+
+- A brief note about design - as minimal and obvious to use as possible!
 - browser app first (plans for mobile option)
 - User research and planning stages were important to decide the stack, mobile or web MVP, mobile or web first, and what the MVP should include
 - User research/features:

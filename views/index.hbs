@@ -32,7 +32,7 @@
   </head>
   <body ng-controller="MainController as main">
     <div>
-      <header class="dev-header"><a href="/"><i class="fa fa-user-circle" aria-hidden="true"></i> Chaperon</a></header>
+      <header class="dev-header"><button class="dev-btn-panic" ng-show="main.currentUser()">PANIC</button><a href="/"><i class="fa fa-user-circle" aria-hidden="true"></i> Chaperon</a></header>
     </div>
 
     <div class="dev-nav">
